@@ -103,6 +103,8 @@ const HEART_SVG = `
 </svg>
 `;
 const fireHearts = () => {
+  var muaElement = document.querySelector('.mua');
+  muaElement.style.display = 'flex';
   const newHeart = document.createElement('div');
   newHeart.className = 'heart';
   newHeart.style.setProperty(
@@ -126,6 +128,7 @@ const fireHearts = () => {
     requestAnimationFrame(fireHearts);
   } else {
     $HEARTS.innerHTML = '';
+    muaElement.style.display = 'none';
   }
 };
 

@@ -18,37 +18,52 @@ body {
 }
 
 .mua {
-  display: fixed;
+  display: none;
   font-family: 'Courier New';
   font-size: 50px;
   z-index: 99;
   position: absolute;
   top: 50%;
-  /* Ajusta la posición verticalmente según tus necesidades */
   left: 50%;
-  /* Ajusta la posición horizontalmente según tus necesidades */
   transform: translate(-50%, -400%);
-  /* Centra el texto en el centro del contenedor */
-  /* Ajusta el tamaño del texto según tus preferencias */
   color: black;
-  /* Hace el texto transparente */
-  /* Añade un borde de 1px al texto en navegadores estándar (Firefox, Edge) */
   background-color: rgba(0, 0, 0, 0);
-  /* Establece el fondo semi-transparente */
   display: inline-block;
-  /* Evita que el fondo se extienda por toda la línea */
   padding: 10px;
-  /* Añade espacio alrededor del texto para que el borde sea visible */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1s ease-in-out;
 }
 
-@media (min-width: 768px) {
+/* Definir la animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -400%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -400%) scale(1);
+  }
+}
+
+@media (max-width: 1240px) {
   .mua {
-    display: flex;
-    justify-content: center;
+    display: none;
     position: fixed;
     transform: translate(-50%, -500%);
     width: 100%;
+    justify-content: center;
     font-size: 55px;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -500%) scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -500%) scale(1);
+    }
   }
   .hearts{
     position: fixed !important;
